@@ -8,6 +8,8 @@
     "naumovs.color-highlight",
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
+    "stylelint.vscode-stylelint",
+    "styled-components.vscode-styled-components",
   ],
   // List of extensions recommended by VS Code that should not be recommended for users of this workspace.
   "unwantedRecommendations": []
