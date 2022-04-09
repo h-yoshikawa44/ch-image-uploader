@@ -6,7 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint-check": "yarn lint:eslint && yarn check:prettier",
+    "lint:eslint": "next lint",
+    "check:prettier": "prettier --check \"./{public,src}/**/*.{js,jsx,ts,tsx,html,gql,graphql,json}\"",
+    "fix": "yarn fix:eslint && yarn fix:prettier",
+    "fix:eslint": "yarn lint:eslint --fix",
+    "fix:prettier": "yarn check:prettier --write",
     "preinstall": "typesync || echo 'skip typesync'"
   },
   "dependencies": {
@@ -15,10 +20,15 @@
     "react-dom": "18.0.0"
   },
   "devDependencies": {
+    "@types/eslint": "8.4.1",
     "@types/node": "^17.0.23",
+    "@types/prettier": "^2.4.4",
     "@types/react": "^18.0.0",
+    "@types/react-dom": "18.0.0",
     "eslint": "8.13.0",
     "eslint-config-next": "12.1.4",
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "^2.6.2",
     "typescript": "^4.6.3",
     "typesync": "^0.9.0"
   },
