@@ -14,7 +14,8 @@
     "fix:eslint": "yarn lint:eslint --fix",
     "fix:stylelint": "yarn lint:stylelint --fix",
     "fix:prettier": "yarn check:prettier --write",
-    "preinstall": "typesync || echo 'skip typesync'"
+    "preinstall": "typesync || echo 'skip typesync'",
+    "prepare": "simple-git-hooks || echo 'Can not set git hooks'"
   },
   "dependencies": {
     "@emotion/react": "^11.9.0",
@@ -33,8 +34,10 @@
     "eslint": "8.13.0",
     "eslint-config-next": "12.1.4",
     "eslint-config-prettier": "^8.5.0",
+    "lint-staged": "^12.3.7",
     "postcss-syntax": "^0.36.2",
     "prettier": "^2.6.2",
+    "simple-git-hooks": "^2.7.0",
     "stylelint": "^14.6.1",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-recess-order": "^3.0.0",
@@ -46,5 +49,18 @@
   "volta": {
     "node": "14.19.0",
     "yarn": "1.22.17"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "yarn run -s lint-staged"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "prettier --write --loglevel=error",
+      "eslint --fix --quiet",
+      "stylelint --fix --quiet"
+    ],
+    "./**/*.{html,gql,graphql,json}": [
+      "prettier --write --loglevel=error"
+    ]
   }
 }
