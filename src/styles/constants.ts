@@ -27,6 +27,7 @@ const gray2 = '#4F4F4F';
 const gray3 = '#828282';
 const gray4 = '#BDBDBD';
 const gray5 = '#E0E0E0';
+const gray6 = '#F6F8FB';
 const white = '#fff';
 
 const blue = '#2F80ED';
@@ -41,6 +42,7 @@ export const colors = {
   gray3,
   gray4,
   gray5,
+  gray6,
   white,
   blue,
   blueLighten,
